@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome to BooksNArt</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js">      </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+   
+    <section>
+        <header id="headerWrapper" ng-controller="HeaderCtrl">
+            <span class="logo pull-left">{{appDetails.title}}</span>
+            <span class="tagline pull-left">{{appDetails.tagline}}</span>
+            <nav class="nav-wrapper pull-right">
+                <ul class="nav nav-tabs">
+                    <li ng-class="{active: nav.isActive('/books')}" class="active"><a href="#/books">Books</a></li>
+                    <li ng-class="{active: nav.isActive('/art')}"><a href="#/art">Art</a></li>
+                    <li><a href="http://www.goodreads.com">GoodReads</a></li>
+                    <li ng-class="{active: nav.isActive('/cart')}"><a href="#/cart">My Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    
+    <section ng-view class="container"></section> 
+</body>
+</html>
